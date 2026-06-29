@@ -1,20 +1,16 @@
 import type { Metadata } from "next";
-import { DM_Sans, Playfair_Display } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
+import WhatsAppButton from "@/components/ui/whatsapp-button";
+import CookieBanner from "@/components/ui/cookie-banner";
 
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-});
-
-const playfairDisplay = Playfair_Display({
-  variable: "--font-playfair",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
@@ -40,12 +36,14 @@ export default function RootLayout({
   return (
     <html
       lang="de"
-      className={`${dmSans.variable} ${playfairDisplay.variable} scroll-smooth`}
+      className={`${inter.variable} scroll-smooth`}
     >
-      <body className="font-[family-name:var(--font-dm-sans)] antialiased min-h-screen flex flex-col bg-white text-slate-900">
+      <body className="font-[family-name:var(--font-inter)] antialiased min-h-screen flex flex-col bg-white text-slate-900">
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
+        <WhatsAppButton />
+        <CookieBanner />
         <Toaster position="bottom-right" richColors />
       </body>
     </html>

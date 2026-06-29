@@ -4,7 +4,7 @@ import KursePageClient from "./kurse-client";
 export const metadata: Metadata = {
   title: "Unsere Kurse | Die Rescue Trainer",
   description:
-    "Alle Erste-Hilfe-Kurse im Überblick: Grundausbildung, Notfalltraining, Erste Hilfe am Kind und Inhouse-Schulungen. DGUV-zertifiziert.",
+    "Alle Erste-Hilfe-Kurse im Überblick: Betriebliche Ersthelfer, Arztpraxen & Kliniken, Erste Hilfe am Kind und Führerscheinbewerber. DGUV-zertifiziert.",
 };
 
 export default function KursePage() {

@@ -1,46 +1,52 @@
 import Link from "next/link";
-import { Cross, Mail, Phone, MapPin, Shield } from "lucide-react";
+import Image from "next/image";
+import { Mail, Phone, MapPin, Shield } from "lucide-react";
 
 const navLinks = [
   { href: "/kurse", label: "Kurse" },
-  { href: "/#service", label: "Service" },
-  { href: "/#ueber-uns", label: "Über uns" },
-  { href: "/kontakt", label: "Kontakt" },
+  { href: "/service", label: "Service" },
+  { href: "/philosophie", label: "Über uns" },
+  { href: "/karriere", label: "Karriere" },
+  { href: "/partner", label: "Partner" },
+  { href: "/impressum", label: "Impressum" },
 ];
 
 const courses = [
-  { href: "/kurse#erste-hilfe", label: "Erste Hilfe Ausbildung" },
-  { href: "/kurse#notfalltraining", label: "Notfalltrainings" },
+  { href: "/kurse#betrieblich", label: "Betriebliche Ersthelfer" },
+  { href: "/kurse#arztpraxen", label: "Arztpraxen & Kliniken" },
   { href: "/kurse#kind", label: "Erste Hilfe am Kind" },
-  { href: "/kurse#inhouse", label: "Inhouse Schulungen" },
+  { href: "/kurse#fuehrerschein", label: "Führerscheinbewerber" },
 ];
 
 export default function Footer() {
   return (
-    <footer className="bg-slate-900 text-slate-300">
+    <footer className="text-slate-300" style={{backgroundColor:"#2A3142"}}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Link href="/" className="flex items-center gap-2 mb-4 group">
-              <div className="flex items-center justify-center w-9 h-9 rounded-lg bg-red-600 group-hover:bg-red-700 transition-colors">
-                <Cross className="w-5 h-5 text-white" strokeWidth={2.5} />
-              </div>
+            <Link href="/" className="flex items-center gap-3 mb-4 group">
+              <Image
+                src="/images/drt_logo.webp"
+                width={40}
+                height={40}
+                alt="Die Rescue Trainer"
+                className="brightness-0 invert"
+              />
               <div className="flex flex-col leading-none">
-                <span className="font-bold text-base text-white tracking-tight">
-                  Die Rescue
+                <span className="font-bold text-sm text-white uppercase tracking-widest">
+                  DIE RESCUE TRAINER
                 </span>
-                <span className="font-bold text-base text-red-400 tracking-tight">
-                  Trainer
+                <span className="text-xs text-[#5B8CFF] tracking-wide">
+                  Next Level Erste Hilfe
                 </span>
               </div>
             </Link>
             <p className="text-sm text-slate-400 leading-relaxed mb-4">
-              Retten ist kein Zufall. Wir machen Sie fit für den Ernstfall —
-              praxisnah, modern und DGUV-zertifiziert.
+              Moderne Notfallausbildung für eine sicherere Welt.
             </p>
             <div className="flex items-center gap-2">
-              <Shield className="w-4 h-4 text-red-400 shrink-0" />
+              <Shield className="w-4 h-4 text-[#5B8CFF] shrink-0" />
               <span className="text-xs text-slate-400">
                 DGUV &amp; BG/Unfallkasse zertifiziert
               </span>
@@ -57,7 +63,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-slate-400 hover:text-red-400 transition-colors"
+                    className="text-sm text-slate-400 hover:text-[#5B8CFF] transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -76,7 +82,7 @@ export default function Footer() {
                 <li key={c.href}>
                   <Link
                     href={c.href}
-                    className="text-sm text-slate-400 hover:text-red-400 transition-colors"
+                    className="text-sm text-slate-400 hover:text-[#5B8CFF] transition-colors"
                   >
                     {c.label}
                   </Link>
@@ -94,7 +100,7 @@ export default function Footer() {
               <li>
                 <a
                   href="mailto:info@dierescuetrainer.de"
-                  className="flex items-start gap-2 text-sm text-slate-400 hover:text-red-400 transition-colors"
+                  className="flex items-start gap-2 text-sm text-slate-400 hover:text-[#5B8CFF] transition-colors"
                 >
                   <Mail className="w-4 h-4 mt-0.5 shrink-0" />
                   <span>info@dierescuetrainer.de</span>
@@ -103,7 +109,7 @@ export default function Footer() {
               <li>
                 <a
                   href="tel:+4961712777284"
-                  className="flex items-center gap-2 text-sm text-slate-400 hover:text-red-400 transition-colors"
+                  className="flex items-center gap-2 text-sm text-slate-400 hover:text-[#5B8CFF] transition-colors"
                 >
                   <Phone className="w-4 h-4 shrink-0" />
                   <span>+49 6171 2777284</span>
@@ -112,7 +118,7 @@ export default function Footer() {
               <li>
                 <div className="flex items-start gap-2 text-sm text-slate-400">
                   <MapPin className="w-4 h-4 mt-0.5 shrink-0" />
-                  <span>Deutschland</span>
+                  <span>Taunusstraße 20, 61440 Oberursel</span>
                 </div>
               </li>
             </ul>
@@ -120,10 +126,9 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="border-t border-slate-800 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-slate-500">
-            &copy; {new Date().getFullYear()} Die Rescue Trainer. Alle Rechte
-            vorbehalten.
+            &copy; 2026 Die Rescue Trainer. Alle Rechte vorbehalten.
           </p>
           <div className="flex items-center gap-4">
             <Link

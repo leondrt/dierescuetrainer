@@ -49,6 +49,10 @@
 }
 
 :root {
+  --brand-royal: #3068F5;
+  --brand-electric: #5B8CFF;
+  --brand-anthrazit: #2A3142;
+  --brand-light: #EEF2F7;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);

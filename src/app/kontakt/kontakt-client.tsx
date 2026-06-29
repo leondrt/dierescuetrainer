@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -88,21 +88,19 @@ export default function KontaktPageClient() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-32 pb-16 bg-slate-900">
+      <section className="pt-32 pb-16" style={{backgroundColor:"#2A3142"}}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <Badge className="bg-red-600/20 text-red-300 border-red-500/30 mb-4">
+            <Badge className="bg-blue-600/20 text-blue-300 border-blue-500/30 mb-4">
               Kontakt aufnehmen
             </Badge>
-            <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
-              Wir sind für Sie{" "}
-              <span className="font-[family-name:var(--font-playfair)] italic text-red-400">
-                da
-              </span>
+            <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight uppercase text-white mb-4">
+              WIR SIND FÜR SIE{" "}
+              <span style={{color:"#5B8CFF"}}>DA</span>
             </h1>
             <p className="text-slate-400 text-lg max-w-xl mx-auto">
               Haben Sie Fragen zu unseren Kursen? Möchten Sie ein Inhouse-Training
@@ -139,8 +137,8 @@ export default function KontaktPageClient() {
                     key={info.label}
                     className="flex items-start gap-4 p-4 rounded-xl bg-slate-50 border border-slate-100"
                   >
-                    <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-red-50 border border-red-100 shrink-0">
-                      <info.icon className="w-5 h-5 text-red-600" />
+                    <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-blue-50 border border-blue-100 shrink-0">
+                      <info.icon className="w-5 h-5 text-blue-600" />
                     </div>
                     <div>
                       <p className="text-xs text-slate-400 font-medium uppercase tracking-wide">
@@ -149,7 +147,7 @@ export default function KontaktPageClient() {
                       {info.href ? (
                         <a
                           href={info.href}
-                          className="text-slate-900 font-semibold text-sm hover:text-red-600 transition-colors"
+                          className="text-slate-900 font-semibold text-sm hover:text-blue-600 transition-colors"
                         >
                           {info.value}
                         </a>
@@ -167,9 +165,9 @@ export default function KontaktPageClient() {
               </div>
 
               {/* Info box */}
-              <div className="p-5 rounded-xl bg-red-50 border border-red-100">
+              <div className="p-5 rounded-xl bg-blue-50 border border-blue-100">
                 <div className="flex items-center gap-2 mb-2">
-                  <MessageSquare className="w-4 h-4 text-red-600" />
+                  <MessageSquare className="w-4 h-4 text-blue-600" />
                   <span className="font-semibold text-slate-900 text-sm">
                     Kostenlose Beratung
                   </span>
@@ -206,7 +204,7 @@ export default function KontaktPageClient() {
                         id="name"
                         placeholder="Max Mustermann"
                         {...register("name")}
-                        className="bg-white border-slate-200 text-slate-900 placeholder:text-slate-400 focus:border-red-400 rounded-xl"
+                        className="bg-white border-slate-200 text-slate-900 placeholder:text-slate-400 focus:border-blue-400 rounded-xl"
                       />
                       {errors.name && (
                         <p className="text-red-500 text-xs mt-1">
@@ -226,7 +224,7 @@ export default function KontaktPageClient() {
                         type="email"
                         placeholder="max@beispiel.de"
                         {...register("email")}
-                        className="bg-white border-slate-200 text-slate-900 placeholder:text-slate-400 focus:border-red-400 rounded-xl"
+                        className="bg-white border-slate-200 text-slate-900 placeholder:text-slate-400 focus:border-blue-400 rounded-xl"
                       />
                       {errors.email && (
                         <p className="text-red-500 text-xs mt-1">
@@ -249,7 +247,7 @@ export default function KontaktPageClient() {
                         type="tel"
                         placeholder="+49 ..."
                         {...register("telefon")}
-                        className="bg-white border-slate-200 text-slate-900 placeholder:text-slate-400 focus:border-red-400 rounded-xl"
+                        className="bg-white border-slate-200 text-slate-900 placeholder:text-slate-400 focus:border-blue-400 rounded-xl"
                       />
                     </div>
                     <div>
@@ -265,7 +263,7 @@ export default function KontaktPageClient() {
                         min="1"
                         placeholder="z. B. 12"
                         {...register("teilnehmer")}
-                        className="bg-white border-slate-200 text-slate-900 placeholder:text-slate-400 focus:border-red-400 rounded-xl"
+                        className="bg-white border-slate-200 text-slate-900 placeholder:text-slate-400 focus:border-blue-400 rounded-xl"
                       />
                     </div>
                   </div>
@@ -280,7 +278,7 @@ export default function KontaktPageClient() {
                     <select
                       id="kurstyp"
                       {...register("kurstyp")}
-                      className="w-full px-3 py-2 rounded-xl bg-white border border-slate-200 text-slate-900 focus:outline-none focus:border-red-400 text-sm"
+                      className="w-full px-3 py-2 rounded-xl bg-white border border-slate-200 text-slate-900 focus:outline-none focus:border-blue-400 text-sm"
                     >
                       <option value="">Bitte wählen...</option>
                       <option value="erste-hilfe">
@@ -314,7 +312,7 @@ export default function KontaktPageClient() {
                       rows={5}
                       placeholder="Beschreiben Sie kurz Ihre Situation oder Ihre Anforderungen..."
                       {...register("nachricht")}
-                      className="bg-white border-slate-200 text-slate-900 placeholder:text-slate-400 focus:border-red-400 rounded-xl resize-none"
+                      className="bg-white border-slate-200 text-slate-900 placeholder:text-slate-400 focus:border-blue-400 rounded-xl resize-none"
                     />
                     {errors.nachricht && (
                       <p className="text-red-500 text-xs mt-1">
@@ -332,7 +330,7 @@ export default function KontaktPageClient() {
                     type="submit"
                     disabled={sending}
                     size="lg"
-                    className="w-full bg-red-600 hover:bg-red-700 text-white rounded-xl font-semibold shadow-md shadow-red-100 hover:shadow-lg hover:scale-[1.02] transition-all disabled:opacity-60 disabled:cursor-not-allowed disabled:scale-100"
+                    className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl font-semibold shadow-md shadow-blue-100 hover:shadow-lg hover:scale-[1.02] transition-all disabled:opacity-60 disabled:cursor-not-allowed disabled:scale-100"
                   >
                     {sending ? (
                       <>
